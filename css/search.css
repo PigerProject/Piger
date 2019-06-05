@@ -1,0 +1,48 @@
+input {
+    width: 25vw;
+    min-width: 250px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.subTitle {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.error {
+    position: absolute;
+}
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    padding-top: 96px;
+}
+
+#userNameTtl {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h3 {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#welcome > div {
+    margin-top: 12px;
+}
+
+@media (max-width: 568px) {
+    input {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+}

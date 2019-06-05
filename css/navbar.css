@@ -1,0 +1,228 @@
+#navbar {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	padding: var(--horizontal_page_padding);
+}
+
+#navbar > *:not(:last-child) {
+	margin-right: 12px;
+}
+
+#navbar #profile {
+	width: 48px;
+	height: 48px;
+	border-radius: 24px;
+}
+
+#navbar #profileSection {
+	position: relative;
+}
+
+#navbar #profileMenu {
+	width: 200px;
+	position: absolute;
+	top: 48px;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 16px;
+	padding-bottom: 6px;
+	font-size: 13px;
+	white-space: nowrap;
+	margin-top: 6px;
+	transition: all .15s;
+}
+
+#navbar #profileMenu:hover {
+	box-shadow: 0 7px 14px 0 rgba(0,0,0,.07), 0 6px 12px 0 rgba(0,0,0,.07);
+}
+
+#navbar #profileMenu .line {
+	width: 100%;
+	margin-top: -16px;
+	margin-bottom: 6px;
+	color: var(--bold);
+}
+
+#profileMenu > .option {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding: 10px 16px;
+}
+
+#profileMenu > .option:hover {
+	background: #f4f4f4;
+}
+
+.option .icon {
+	width: 24px;
+	margin-right: 12px;
+}
+
+.option .icon svg {
+	height: 16px;
+	fill: var(--light);
+}
+
+.option .text {
+	flex: 1;
+}
+
+#navbar #post {
+	transition: transform .15s;
+}
+
+#navbar #post.close {
+	transform: rotate(45deg);
+}
+
+#navbar #post, #navbar #profile, #navbar #settings {
+	cursor: pointer;
+}
+
+#navbar #post, #navbar #settings {
+	height: 24px;
+	fill: var(--light);
+}
+
+#postBoxWrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+#postBox {
+	display: table;
+	position: relative;
+	top: 100%;
+	width: 40%;
+	background: white;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding: 24px;
+	text-align: center;
+	z-index: 5;
+	box-shadow: 0px 0px 40px -2px rgba(0,0,0,0.125);
+	transition: all .15s;
+	opacity: 0;
+	pointer-events: initial;
+}
+
+#postBox.open {
+	bottom: 0;
+	transform: translateY(-100%);
+	opacity: 1;
+}
+
+#postBox .title {
+	font-weight: 600;
+	font-size: 18px;
+	color: var(--bold);
+}
+
+#postBox textarea {
+	width: 100%;
+	height: 168px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+#postBox input[type="text"] {
+	width: 100%;
+}
+
+#postBox .addImage {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	margin-bottom: 12px;
+	text-align: left;
+}
+
+#postBox .addImage .checkBox {
+	margin-right: 12px;
+}
+
+#postBox .inputDesc {
+	text-align: left;
+}
+
+#postBox button {
+	width: 148px;
+}
+
+#postBox .image {
+	width: 100%;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.buttons button:first-child {
+	margin-right: 12px;
+}
+
+#errorToastWrapper {
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	top: 90%;
+	z-index: 6;
+}
+
+#errorToast {
+	display: none;
+	padding: 12px 24px;
+	color: white;
+	background: var(--error);
+	border-radius: 4px;
+	box-shadow: 0px 0px 40px -2px rgba(0,0,0,0.125);
+	font-size: 12px;
+}
+
+#errorToast.visible {
+	display: inline-block;
+}
+
+@media (max-width: 1024px) {
+	#postBox {
+		width: 60%;
+	}
+}
+
+@media (max-width: 768px) {
+	#postBox {
+		width: 75%;
+		min-width: 364px;
+	}
+}
+
+@media (max-width: 568px) {
+	#postBox {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#postBox.open {
+		width: 100%;
+		height: 100%;
+		transition: none;
+		border-radius: 0;
+	}
+
+	#postBox textarea {
+		flex: 1;
+	}
+}

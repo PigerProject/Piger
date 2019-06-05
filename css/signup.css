@@ -1,0 +1,44 @@
+#signUpApp {
+	min-height: calc(100vh - 8px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#backBtn {
+	width: 20px;
+	fill: var(--light);
+	position: absolute;
+	top: var(--horizontal_page_padding);
+	left: var(--horizontal_page_padding);
+	cursor: pointer;
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 48px;
+}
+
+#wrapper {
+	width: 340px;
+	margin-top: 48px;
+	margin-bottom: 48px;
+}
+
+input {
+	width: 100%;
+}
+
+.inputDesc:not(:first-child) {
+	margin-top: 24px;
+}
+
+.buttonWrapper {
+	text-align: center;
+}
+
+@media (max-width: 568px) {
+	#wrapper {
+		width: 275px;
+	}
+}

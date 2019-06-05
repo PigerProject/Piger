@@ -1,0 +1,92 @@
+input, textarea {
+	width: 30vw;
+	min-width: 275px;
+}
+
+h2 {
+	text-align: center;
+}
+
+#profileOptionsApp {
+	min-height: calc(100vh - 8px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#wrapper {
+	width: 100%;
+	margin-top: 48px;
+	margin-bottom: 48px;
+}
+
+#wrapper .sections {
+	display: flex;
+	justify-content: center;
+}
+
+#wrapper .section {
+	padding-left: var(--horizontal_page_padding);
+}
+
+#wrapper .section:last-child {
+	padding-right: var(--horizontal_page_padding);
+}
+
+.inputDesc:not(:first-child) {
+	margin-top: 24px;
+}
+
+#buttons, #deleteBtnWrapper {
+	position: absolute;
+	top: var(--horizontal_page_padding);
+}
+
+#buttons {
+	right: var(--horizontal_page_padding);
+	margin-left: var(--horizontal_page_padding);
+}
+
+#deleteBtnWrapper {
+	left: var(--horizontal_page_padding);
+}
+
+#cancelBtn {
+	margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+	input, textarea {
+		width: 100%;
+		min-width: auto;
+	}
+
+	#wrapper {
+		margin-top: 128px;
+		margin-bottom: 128px;
+	}
+
+	#wrapper .sections {
+		display: block;
+	}
+
+	#wrapper .section:first-child {
+		margin-bottom: 24px;
+		padding-right: var(--horizontal_page_padding);
+	}
+
+	#ppPreview {
+		width: 128px;
+		height: 128px;
+		border-radius: 64px;
+	}
+
+	.profile-picture {
+		width: 125px;
+		height: 125px;
+	}
+
+	#deleteBtnWrapper {
+		margin-bottom: 24px;
+	}
+}

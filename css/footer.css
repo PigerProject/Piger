@@ -1,0 +1,14 @@
+#footer {
+	width: 100%;
+	padding: 32px;
+	font-size: 14px;
+}
+
+#footer > *:not(:last-child) {
+	margin-right: 32px;
+}
+
+#footer #copyright {
+	float: right;
+	color: var(--light);
+}

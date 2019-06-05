@@ -1,0 +1,10 @@
+#welcome {
+    width: 100%;
+    padding: 64px 24px;
+    background: linear-gradient(to top right, #eeeeef, #f9f8fa);
+    margin-bottom: 24px;
+}
+
+#backBtn {
+    fill: #aaa;
+}

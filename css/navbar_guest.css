@@ -1,0 +1,56 @@
+#navbar #login {
+	transition: color .15s;
+	cursor: pointer;
+}
+
+#navbar #login:hover {
+	color: #bbd;
+}
+
+#navbar #loginDetails {
+	top: var(--horizontal_page_padding);
+	width: 290px;
+}
+
+#navbar #loginDetails .label {
+	cursor: pointer;
+	float: right;
+	margin-bottom: 8px;
+}
+
+#navbar #loginDetails input {
+	width: 100%;
+}
+
+#navbar #loginBox {
+	width: 100%;
+	margin-top: 12px;
+	padding: 32px 24px;
+	overflow: hidden;
+}
+
+#navbar #loginBox .inputDesc:not(:first-child) {
+	margin-top: 24px;
+}
+
+#navbar #loginBox .bottom {
+	display: flex;
+	align-items: center;
+	margin-top: 32px;
+	position: relative;
+}
+
+#navbar #loginBox .bottom .loading {
+	position: absolute;
+	right: 32px;
+	width: 24px;
+	animation: spin 1s infinite;
+}
+
+#navbar p.error {
+	margin-bottom: 0;
+}
+
+.visible {
+	display: block !important;
+}

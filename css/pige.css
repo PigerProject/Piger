@@ -1,0 +1,224 @@
+#piges {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	padding: 24px 25%;
+}
+
+.skeletonPigeWrapper {
+	width: 100%;
+}
+
+.pigeList, .skeletonPige {
+	width: 100%;
+}
+
+.skeletonPige .text, .skeletonPige .profile-picture {
+	background: #f1f1f1;
+}
+
+.skeletonPige .text {
+	border-radius: 8px;
+	margin-left: 16px;
+}
+
+.skeletonPige .pigeMain {
+	margin-bottom: 0 !important;
+}
+
+.pigeList:not(:last-child) {
+	margin-bottom: 24px;
+}
+
+.pige {
+	width: 100%;
+	padding: 16px;
+	background: white;
+	border-radius: 6px;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,.04), 0 6px 10px 0 rgba(0,0,0,.04);
+	position: relative;
+}
+
+.pige.pending {
+	opacity: .5;
+	animation: pending 1s infinite;
+	pointer-events: none;
+}
+
+.pige.reply {
+	width: calc(100% - 48px);
+	margin-left: 48px;
+	background: #fbfbfb;
+}
+
+.pigeList .pige.reply:not(:last-child) {
+	border-radius: 0;
+}
+
+.pigeList .pige.reply:last-child {
+	border-radius: 0 0 6px 6px;
+}
+
+.pige .pigeMain {
+	display: flex;
+	margin-bottom: 12px;
+}
+
+.pige .delete {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	height: 16px;
+	fill: var(--light);
+	transition: fill .15s;
+	cursor: pointer;
+}
+
+.pige .delete:hover {
+	fill: var(--secondary);
+}
+
+.pige .profile-picture {
+	width: 75px;
+	height: 75px;
+}
+
+.pige .text {
+	flex: 1;
+	padding-left: 24px;
+	padding-right: 24px;
+	word-break: break-word;
+}
+
+.pige .text .content > div {
+	margin-bottom: 12px;
+}
+
+.pige .text .content > img {
+	max-width: 100%;
+	max-height: 55vh;
+	cursor: pointer;
+}
+
+.pige .textHeader {
+	margin-bottom: 6px;
+}
+
+.pige .textHeader .displayName {
+	color: var(--bold);
+	margin-bottom: 8px;
+	font-weight: 600;
+	padding-right: 8px;
+}
+
+.pige .textHeader .userName {
+	color: var(--light);
+	font-size: 14px;
+}
+
+.pige .pigeData {
+	color: var(--light);
+	font-size: 14px;
+}
+
+.pige .pigeData svg {
+	height: 16px;
+	padding-left: 6px;
+	transition: fill .1s;
+}
+
+.pige .pigeData .bar {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	margin-right: 16px;
+	user-select: none;
+}
+
+.pige .pigeData .heartBar:hover:not(.liked) > svg {
+	fill: #faa;
+}
+
+.pige .pigeData .replyBar:hover > svg {
+	fill: #88f;
+}
+
+.heartBar.liked > svg {
+	fill: #f88;
+}
+
+.heartBar > svg.animation {
+	animation: like .275s;
+}
+
+@keyframes like {
+	50% {
+		transform: scale(1.25);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.bar > span {
+	min-width: 15px;
+}
+
+.heartBar.liked > span {
+	color: var(--accent);
+}
+
+.pige .pigeData .time {
+	color: var(--light);
+	font-size: 14px;
+	float: right;
+}
+
+#imageZoom {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, .675);
+	cursor: zoom-out;
+}
+
+body.imgZoom {
+	overflow: hidden;
+}
+
+#imageZoom > img {
+	max-width: 100%;
+	max-height: 100%;
+	padding: 48px;
+}
+
+#imageZoom > button {
+	position: fixed;
+	top: 24px;
+	left: 24px;
+}
+
+@media (max-width: 1024px) {
+	#piges {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+
+@media (max-width: 768px) {
+	#piges {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.pige {
+		border-radius: 0;
+	}
+}

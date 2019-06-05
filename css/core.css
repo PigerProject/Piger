@@ -1,0 +1,368 @@
+:root {
+	--theme: #d7caf4;
+	--theme_dark: #736a94;
+	--secondary: #808a9f;
+	--accent: #8894b2;
+	--bold: #113;
+	--light: #aac;
+	--error: #a55;
+	--small: 12px;
+	--horizontal_page_padding: 32px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	background: #f9f9f9;
+	color: #557;
+}
+
+body, textarea, input[type="text"] {
+	font-family: 'Montserrat', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+img, svg {
+	vertical-align: middle;
+}
+
+span {
+	line-height: 1.5;
+}
+
+a, a:visited, a:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+p {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+p.error {
+	color: var(--error);
+	overflow: hidden;
+	transition: all .15s;
+	backface-visibility: hidden;
+	font-size: 12px;
+}
+
+p.error:not(.visible) {
+	height: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	opacity: 0;
+}
+
+p.error.visible {
+	margin-top: 16px;
+	margin-bottom: 32px;
+	opacity: 1;
+}
+
+button {
+	outline: none;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,.11), 0 3px 5px 0 rgba(0,0,0,.07);
+	border-radius: 25px;
+	padding: 12px 42px;
+	background: var(--theme_dark);
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: 'Catamaran', sans-serif;
+	transition: all .15s;
+	backface-visibility: hidden;
+}
+
+button:hover:not(.pending):not(:disabled) {
+	box-shadow: 0 12px 24px 0 rgba(0,0,0,.11), 0 10px 20px 0 rgba(0,0,0,.07);
+	transform: translateY(-1px);
+}
+
+button.secondary {
+	color: var(--theme_dark);
+	background: transparent;
+	border: 1px solid #aab;
+	border-radius: 8px;
+	padding: 8px 24px;
+	font-size: var(--small);
+	box-shadow: none;
+}
+
+button.secondary:hover {
+	box-shadow: none !important;
+}
+
+button.secondary.danger {
+	color: #d99;
+	border-color: #d99;
+}
+
+button.white {
+	background: white;
+	color: var(--theme_dark);
+}
+
+button.pending {
+	color: #d7d7d7;
+	cursor: not-allowed;
+	background: #635a84;
+	transition: none;
+	animation: pending 1s infinite;
+}
+
+button.pending:hover {
+	background: #635a84;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,.11), 0 3px 5px 0 rgba(0,0,0,.07);
+	transform: none;
+}
+
+button:disabled {
+	opacity: .25;
+}
+
+button.pending, button:disabled {
+	cursor: default;
+}
+
+@keyframes pending {
+	25% {
+		transform: translateY(-4px);
+	}
+
+	75% {
+		transform: translateY(0);
+	}
+}
+
+h1, h2, h3 {
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 700;
+	line-height: 1;
+	color: #215;
+	margin-top: 12px;
+	margin-bottom: 32px;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+section {
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+}
+
+textarea {
+	resize: none;
+}
+
+input, textarea {
+	border-radius: 16px;
+	outline: none;
+	border: none;
+	background: white;
+	padding: 8px 12px;
+	line-height: 1.5em;
+	font-size: 14px;
+	border: 1px solid var(--theme);
+	transition: all .15s;
+}
+
+input:focus, textarea:focus {
+	box-shadow: 0 2px 5px 0 rgba(210, 170, 244, .125), 0 2px 5px 0 rgba(210, 170, 244, .125);
+}
+
+input:hover, input:focus, textarea:hover, textarea:focus {
+	border: 1px solid #aac2f4;
+}
+
+input.darker, textarea.darker {
+	background: #fcfcfc;
+}
+
+::-webkit-input-placeholder {
+	color: var(--light);
+}
+::-moz-placeholder {
+	 color: var(--light);
+}
+:-ms-input-placeholder {
+	 color: var(--light);
+}
+:-moz-placeholder {
+	 color: var(--light);
+}
+
+.checkBox {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border-radius: 4px;
+	background: #fcfcfc;
+	cursor: pointer;
+	border: 1px solid var(--theme);
+}
+
+.checkBox.checked {
+	box-shadow: inset 0 0 0 4px #fcfcfc;
+	background: var(--light);
+}
+
+.subTitle, .inputDesc {
+	text-transform: uppercase;
+	color: var(--light);
+	letter-spacing: 1px;
+	font-weight: 700;
+}
+
+.subTitle {
+	font-size: 14px;
+}
+
+.small {
+	font-size: 12px;
+}
+
+.inputDesc {
+	font-size: 10px;
+	margin-bottom: 12px;
+}
+
+.line {
+	width: 100%;
+	height: 8px;
+	background: linear-gradient(90deg, rgba(158,182,213,1) 0%, rgba(103,167,179,1) 18%, rgba(131,170,190,1) 38%, rgba(170,155,217,1) 78%, rgba(117,157,176,1) 100%);
+	z-index: 1;
+}
+
+.imageAndText {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.imageAndText > img {
+	width: 40%;
+	align-self: center;
+}
+
+.imageAndText > div {
+	max-width: 428px;
+}
+
+.imageAndText.textLeft {
+	flex-direction: row-reverse;
+}
+
+/* workaround for https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15947692/ */
+@supports (-ms-ime-align:auto) {
+    .imageAndText {
+        justify-content: space-around;
+    }
+}
+
+.box {
+	background: white;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,.04), 0 6px 10px 0 rgba(0,0,0,.04);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.eye {
+	height: 20px;
+	fill: var(--theme);
+	cursor: pointer;
+}
+
+.eye:hover {
+	fill: #c29ae4;
+}
+
+.eye.toggled {
+	fill: var(--theme_dark);
+}
+
+#passwordWrapper {
+	position: relative;
+}
+
+#passwordWrapper .eye {
+	position: absolute;
+	top: 50%;
+	right: 2px;
+	transform: translate(-50%, -50%);
+}
+
+.profile-picture {
+	width: 15vw;
+	height: 15vw;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background: #f9f9f9;
+	user-select: none;
+}
+
+.profile-picture img.wider {
+	height: 100%;
+}
+
+.profile-picture img.higher {
+	width: 100%;
+}
+
+#backBtn {
+	width: 20px;
+	fill: #dde;
+	position: absolute;
+	top: var(--horizontal_page_padding);
+	left: var(--horizontal_page_padding);
+	cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+	.imageAndText {
+		display: block;
+		padding-left: var(--horizontal_page_padding);
+		padding-right: var(--horizontal_page_padding);
+	}
+
+	.imageAndText > img {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-bottom: 96px;
+	}
+
+	.imageAndText > div {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 568px) {
+	.imageAndText > img {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
