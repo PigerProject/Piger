@@ -18,10 +18,10 @@ $mysqli = new MySQLi('127.0.0.1', '', '', 'piger');
 $stmt = $mysqli->prepare('DELETE users, replies, posts, likes FROM users
 LEFT JOIN posts ON posts.userId = ?
 LEFT JOIN replies ON replies.userId = ? OR replies.replyId = posts.id
-LEFT JOIN likes ON likes.userId = ? OR likes.id = posts.id OR likes.id = replies.id OR likes.id = posts.id
+LEFT JOIN likes ON likes.userId = ? OR likes.id = posts.id OR likes.id = replies.id
 WHERE users.id = ?');
 
-$stmt->bind_param('ssss', $id, $id, $id, $id);
+$stmt->bind_param('sss', $id, $id, $id);
 
 if($stmt->execute()){
 	http_response_code(200);
